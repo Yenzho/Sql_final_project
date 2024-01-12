@@ -101,7 +101,7 @@ group by flight_id, dp.airport_name, ar.airport_name
 --ЗАДАНИЕ №6
 --Выведите количество пассажиров по каждому коду сотового оператора. Код оператора – это три символа после +7
 
-select substring() (contact_data->>'phone' from '\+7(\d{3})') as operator_code,
+select substring(contact_data->>'phone' from '\+7(\d{3})') as operator_code,
     count(*) as passenger_count
 from tickets t 
 group by operator_code
